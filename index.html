@@ -8,12 +8,21 @@
     <script src="https://kit.fontawesome.com/525c49cbb7.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
-    
-    <div class="classeEMALTA" id="emAlta">
-        
-
+<body onload="algoescrito()">
+    <div class="nav">
+        <div class="identificador">THE<br>BEST<br>STORE</div>
+        <div class="input-box">
+            <div class="row">
+                <a href="" target="_blank" hidden></a>
+                <input type="text" id="input-box" placeholder="Search anything" autocomplete="off">
+                <button id="btnclean"><i class="fa-solid fa-magnifying-glass" id="gosearch"></i><i class="fa-solid fa-x"
+                        id="cleansearch"></i></button>
+            </div>
+        </div>
     </div>
+
+    <div class="classeEMALTA" id="emAlta"></div>
+    <div class="classePROMOCOES" id="promocoes">PROMOÇÕES</div>
 
     <script src="pesquisa.js">
 

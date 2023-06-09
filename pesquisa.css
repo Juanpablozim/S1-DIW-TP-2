@@ -8,11 +8,13 @@
     box-sizing: border-box;
 }
 
-
-
 /*
     EM ALTA
 */
+
+.classeEMALTA{
+    display: inline-block;
+}
 
 .textoEMALTA{
     text-align: center;
@@ -80,8 +82,116 @@
     padding: 10px;
 }
 
-/* Redimencionameto para telas com largura menor que 600px */
-@media (max-width: 600px) {
+/*
+    PROMOCOES
+*/
+
+.classePROMOCOES{
+    display: inline-block;
+}
+
+/*
+    NAV MENU
+*/
+.nav {
+    display: flex;
+    align-items: center;
+    color: rgb(82, 82, 82);
+    font-weight: 1000;
+}
+
+.identificador {
+    margin: 5px;
+    max-width: 12%;
+    display: inline-block;
+}
+
+/*
+    BARRA DE PESQUISA
+*/
+.input-box {
+    display: inline-block;
+    width: 80%;
+    background: aliceblue;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    padding: 5px 20px;
+}
+
+input {
+    width: 10%;
+    flex: 1;
+    height: 30px;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    font-size: 18px;
+    color: rgb(58, 120, 255);
+}
+
+button {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+button i {
+    margin: 2px;
+    padding: 5px;
+    border-radius: 30px;
+    background-color: rgb(150, 206, 255);
+    width: 32px;
+    text-align: center;
+    color: palevioletred;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+::placeholder {
+    color: rgb(58, 120, 255);
+}
+
+#gosearch i.fa-x {
+    display: none;
+}
+
+
+/* Redimencionameto para telas com largura entre 350px e 600px */
+@media (max-width: 350px) {
+    .classeEMALTA{
+        width: 100%;
+    }
+    
+    .card {
+        width: 100%;
+    }
+    
+    .card .texto {
+        height: 90px;
+    }
+
+    .card .preco h2 {
+        font-size: 18px;
+    }
+
+    .identificador {
+        margin: 5px;
+        max-width: 17%;
+        display: inline-block;
+    }
+
+    .input-box {
+        width: 80%;
+    }
+}
+
+/* Redimencionameto para telas com largura entre 350px e 600px */
+@media (min-width: 350px) and (max-width: 600px) {
     .classeEMALTA{
         width: 66%;
     }
@@ -96,6 +206,10 @@
 
     .card .preco h2 {
         font-size: 16px;
+    }
+
+    .input-box {
+        width: 80%;
     }
 }
 

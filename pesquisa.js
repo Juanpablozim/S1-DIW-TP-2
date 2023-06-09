@@ -44,3 +44,23 @@ function ProdutosEMALTA() {
     }
     emAlta.innerHTML = texto;
 }
+
+const inputBox = document.getElementById("input-box");
+const goSearchButton = document.getElementById("gosearch");
+const cleanSearchButton = document.getElementById("cleansearch");
+
+inputBox.onkeyup = function() {
+    let input = inputBox.value.trim().toLowerCase();
+    cleanSearchButton.style.display = input.length ? "inline-block" : "none";
+}
+
+function algoescrito(){
+    let input = inputBox.value.trim().toLowerCase();
+    cleanSearchButton.style.display = input.length ? "inline-block" : "none";
+    resultsBox.innerHTML = '';
+}
+
+cleanSearchButton.onclick = function() {
+    inputBox.value = "";
+    cleanSearchButton.style.display = "none";
+}
