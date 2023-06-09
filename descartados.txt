@@ -1,0 +1,32 @@
+function loadData() {
+    fetch('https://fakestoreapi.com/products')
+    .then(res=>res.json())
+    .then(json=>console.log(json))
+}
+
+loadData().then(data => {
+    availableKeywords = data;
+  }).catch(error => {
+    console.log('Erro ao carregar os dados:', error);
+  });
+
+function leDados() {
+    fetch('https://fakestoreapi.com/products')
+    .then(res=>res.json())
+    .then(json=>console.log(json))
+    
+
+    //let strDados = localStorage.getItem('db');
+    //let objDados = {};
+
+    if (json) {
+        objDados = JSON.parse (json);
+        console.log(objDados);
+    }
+    else {
+        objDados = { };
+    }
+
+    return objDados;
+}
+

@@ -1,0 +1,138 @@
+/*
+    DOCUMENTO
+*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+
+
+/*
+    EM ALTA
+*/
+
+.textoEMALTA{
+    text-align: center;
+    margin-left: 0.5%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/*
+    CARDs
+*/
+
+/* Regras gerais do card */
+.card {
+    margin-left: 0.5%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    display: inline-block;
+}
+
+.card:hover {
+    border: 2px solid green;
+}
+
+.card .cardIMG {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card img {
+    max-height: 130px;
+    max-width: 80%;
+    transition: 0.5s;
+}
+
+.card:hover img {
+    max-height: 148px;
+    max-width: 100%;
+}
+
+.card .texto h1 {
+    color: rgb(65, 65, 65);
+    font-size: 12px;
+}
+
+.card .preco h2 {
+    max-height: 20px;
+    background-color: rgba(0, 0, 0, 0.04);
+    border-radius: 10px;
+    color: black;
+}
+
+.card:hover .preco h2 {
+    color: green;
+}
+
+.card .texto {
+    padding: 10px;
+}
+
+/* Redimencionameto para telas com largura menor que 600px */
+@media (max-width: 600px) {
+    .classeEMALTA{
+        width: 66%;
+    }
+    
+    .card {
+        width: 48%;
+    }
+    
+    .card .texto {
+        height: 90px;
+    }
+
+    .card .preco h2 {
+        font-size: 16px;
+    }
+}
+
+/* Redimencionameto para telas com largura entre 600px e 1200px */
+@media (min-width: 600px) and (max-width: 1200px) {
+    .classeEMALTA{
+        width: 75%;
+    }
+    
+    .card {
+        width: 23.6%;
+    }
+
+    .card .texto {
+        height: 50px;
+    }
+
+    .card .preco h2 {
+        font-size: 18px;
+    }
+}
+
+/* Redimencionameto para telas com largura maior ou igual a 1200px */
+@media (min-width: 1200px) {
+    .classeEMALTA{
+        width: 80%;
+    }
+    
+    .card {
+        width: 18.8%;
+    }
+
+    .card .texto {
+        height: 55px;
+    }
+
+    .card .preco h2 {
+        font-size: 18px;
+    }
+}

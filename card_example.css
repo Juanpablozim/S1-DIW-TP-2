@@ -1,0 +1,93 @@
+/*
+    DOCUMENTO
+*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    box-sizing: border-box;
+}
+
+.card {
+    margin-left: 0.5%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    display: inline-block;
+}
+
+.card:hover {
+    border: 2px solid green;
+}
+
+.card .cardIMG {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card img {
+    max-height: 130px;
+    max-width: 80%;
+    transition: 0.5s;
+}
+
+.card:hover img {
+    max-height: 148px;
+    max-width: 100%;
+}
+
+.card .texto h1 {
+    color: rgb(65, 65, 65);
+    font-size: 14px;
+}
+
+.card .preco h2 {
+    background-color: rgba(0, 0, 0, 0.04);
+    border-radius: 10px;
+    color: black;
+}
+
+.card:hover .preco h2 {
+    color: green;
+}
+
+/* Estilos para telas com largura menor que 600px */
+@media (max-width: 600px) {
+    .card {
+        width: 48%;
+    }
+    
+    .card .texto {
+        padding: 10px;
+        height: 70px;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1200px) {
+    .card {
+        width: 23.6%;
+    }
+
+    .card .texto {
+        padding: 10px;
+        height: 50px;
+    }
+}
+
+/* Estilos para telas com largura maior ou igual a 1200px */
+@media (min-width: 1200px) {
+    .card {
+        width: 18.8%;
+    }
+
+    .card .texto {
+        padding: 10px;
+        height: 50px;
+    }
+}
