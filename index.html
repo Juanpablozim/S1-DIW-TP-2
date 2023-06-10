@@ -9,7 +9,7 @@
 </head>
 
 <body onload="algoescrito()">
-    <div class="nav">
+    <header class="nav">
         <div class="identificador">THE<br>BEST<br>STORE</div>
         <div class="input-box">
             <div class="row">
@@ -19,7 +19,7 @@
                         id="cleansearch"></i></button>
             </div>
         </div>
-    </div>
+    </header>
 
     <div class="categories">
         <div class="cabecalho">
@@ -34,11 +34,47 @@
     </div>
 
     <div class="classeEMALTA" id="emAlta"></div>
-    <div class="classePROMOCOES" id="promocoes">PROMOÇÕES</div>
+    <div class="classeContato" id="contato">
+        <div class="formulario">
+            <div class="cabecalho"><h1>Receba as ultimas informações e promoções deixando seu contato abaixo!</h1></div>
+            <div class="corpo">
+                <div class="inputBoxclass">
+                    <input class="contatoInput" type="text" id="contatoEmail" required><label class="contatoLabel" for="">Email</label>
+                </div>
+                <div class="inputBoxclass">
+                    <input class="contatoInput" type="text" id="contatoNumero" required><label class="contatoLabel" for="">Telefone</label>
+                </div>
+                <div id="enviado" class="enviado">
 
-    <script src="pesquisa.js">
+                </div>
+                <div class="btnContatodiv">
+                    <button class="btnContato" id="btnFormContato">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    </script>
+    <footer class="rodape">
+        <div class="rodapeContatos">
+            Belo Horizonte - Coração Aucarístico<br>
+            Avenida Dom José Gaspar, n° 500<br>
+            mail@thebeststore.email
+            (00) 91234-5678
+        </div>
+        <div class="rodapeSocial">
+            <a href="#"><i class="fa-brands fa-facebook"></i>.com/thebeststore<br></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i>.com/thebeststore<br></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i>.com/thebeststore<br></a>
+        </div>
+        <div class="metodosdepagamento">
+            <i class="fa-brands fa-cc-visa"></i>
+            <i class="fa-brands fa-cc-mastercard"></i>
+            <i class="fa-brands fa-paypal"></i>
+            <i class="fa-brands fa-pix"></i>
+        </div>
+    </footer>
+
+    <script src="pesquisa.js"></script>
 
 </body>
 

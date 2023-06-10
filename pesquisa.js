@@ -205,3 +205,13 @@ cleanSearchButton.onclick = function () {
     cleanSearchButton.style.display = "none";
     // Tira o "x" da tela
 }
+
+
+
+function enviarDados() {
+    document.getElementById('enviado').innerHTML = 'Parabéns!<br>Agora você estará por dentro de tudo de melhor que a The Best Store tem para te oferecer';
+    document.getElementById('contatoEmail').value = '';
+    document.getElementById('contatoNumero').value = '';
+}
+
+document.getElementById('btnFormContato').addEventListener('click', enviarDados);

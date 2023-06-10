@@ -9,13 +9,83 @@
 }
 
 /*
+    NAV MENU
+*/
+.nav {
+    background-color: rgb(58, 120, 255);
+    display: flex;
+    align-items: center;
+    color: aliceblue;
+    font-weight: 1000;
+}
+
+.identificador {
+    margin: 5px;
+    max-width: 12%;
+    display: inline-block;
+}
+
+/*
+    BARRA DE PESQUISA
+*/
+.nav .input-box {
+    display: inline-block;
+    width: 80%;
+    background: aliceblue;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.nav .row {
+    display: flex;
+    align-items: center;
+    padding: 5px 20px;
+}
+
+.nav input {
+    width: 10%;
+    flex: 1;
+    height: 30px;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    font-size: 18px;
+    color: rgb(58, 120, 255);
+}
+
+.nav button {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.nav button i {
+    margin: 2px;
+    padding: 5px;
+    border-radius: 30px;
+    background-color: rgb(150, 206, 255);
+    width: 32px;
+    text-align: center;
+    color: palevioletred;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.nav ::placeholder {
+    color: rgb(58, 120, 255);
+}
+
+#gosearch i.fa-x {
+    display: none;
+}
+
+/*
     CATEGORIES
 */
 .categories {
     padding: 10px;
     margin: 10px;
-    border: black 1px solid;
-    border-radius: 10px;
+    border-bottom: black 1px solid;
 }
 
 .categories .opcoes {
@@ -54,21 +124,6 @@
 
 .categories .produtos .texto {
     white-space: normal;
-}
-
-/*
-    EM ALTA
-*/
-
-.classeEMALTA{
-    display: inline-block;
-}
-
-.textoEMALTA{
-    text-align: center;
-    margin-left: 0.5%;
-    margin-top: 5px;
-    margin-bottom: 5px;
 }
 
 /*
@@ -131,82 +186,137 @@
 }
 
 /*
-    PROMOCOES
+    EM ALTA
 */
 
-.classePROMOCOES{
+.classeEMALTA{
     display: inline-block;
+}
+
+.textoEMALTA{
+    text-align: center;
+    margin-left: 0.5%;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 /*
-    NAV MENU
+    CONTATO
 */
-.nav {
-    display: flex;
-    align-items: center;
-    color: rgb(82, 82, 82);
-    font-weight: 1000;
+
+.classeContato {
+    display: inline-block;
+    vertical-align: top;
 }
 
-.identificador {
-    margin: 5px;
-    max-width: 12%;
-    display: inline-block;
+.classeContato .cabecalho{
+    padding: 10px;
+    border: 2px rgb(0, 110, 255) solid;
+    background-color: rgb(0, 110, 255);
+    border-radius: 30px 30px 0px 0px;
 }
 
-/*
-    BARRA DE PESQUISA
-*/
-.input-box {
-    display: inline-block;
+.classeContato .cabecalho h1{
+    font-size: 2.5vmin;
+    color: aliceblue;
+}
+
+.classeContato .corpo{
+    color: black;
+    border: 2px gray solid;
+    padding: 0px;
+}
+
+.classeContato .corpo .inputBoxclass{
+    position: relative;
+    margin: 23px 0px 10px 10px;
+}
+
+.contatoInput{
     width: 80%;
-    background: aliceblue;
-    margin: 10px;
-    border-radius: 5px;
-}
-
-.row {
-    display: flex;
-    align-items: center;
-    padding: 5px 20px;
-}
-
-input {
-    width: 10%;
-    flex: 1;
-    height: 30px;
-    background: transparent;
-    border: 0;
-    outline: 0;
-    font-size: 18px;
-    color: rgb(58, 120, 255);
-}
-
-button {
+    font-size: 2.5vmin;
     background: none;
     border: none;
+    border-bottom: 2px solid rgb(0, 110, 255);;
     outline: none;
+    color: rgb(0, 110, 255);
 }
 
-button i {
-    margin: 2px;
-    padding: 5px;
-    border-radius: 30px;
-    background-color: rgb(150, 206, 255);
-    width: 32px;
+.contatoLabel{
+    font-size: 2vmin;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+    transition: .5s;
+    color: rgb(0, 0, 0);
+}
+
+.contatoInput:focus ~ .contatoLabel,
+.contatoInput:valid ~ .contatoLabel{
+    top: -20px;
+    font-size: 1.5vmin;
+    color: rgb(0, 110, 255);
+}
+
+.btnContatodiv{
     text-align: center;
-    color: palevioletred;
-    font-size: 22px;
-    cursor: pointer;
 }
 
-::placeholder {
-    color: rgb(58, 120, 255);
+.btnContato {
+    margin: 10px;
+    border: 1px rgb(0, 110, 255) solid;
+    padding: 5px;
+    border-radius: 5px;
+    color: rgb(0, 110, 255);
+    background-color: aliceblue;
 }
 
-#gosearch i.fa-x {
-    display: none;
+.btnContato:hover{
+    background-color: rgb(0, 110, 255);
+    color: white;
 }
+
+.enviado{
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px;
+    text-align: center;
+    font-size: 1.5vmin;
+    color: rgb(0, 110, 255);
+    background-color: rgb(192, 219, 255);
+}
+
+/*
+    RODAPÉ
+*/
+
+.rodape {
+    background-color: rgb(0, 110, 255);
+    color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .rodapeContatos {
+    font-size: 2vmin;
+    padding: 20px;
+    flex-basis: 33.33%;
+  }
+  
+  .rodapeSocial {
+    font-size: 3vmin;
+    text-align: center;
+    padding: 20px;
+    flex-basis: 33.33%;
+  }
+  
+  .metodosdepagamento {
+    text-align: center;
+    font-size: 10vmin;
+    padding: 20px;
+    flex-basis: 33.33%;
+  }
 
 
 /* Redimencionameto para telas com largura entre 350px e 600px */
@@ -236,10 +346,14 @@ button i {
     .input-box {
         width: 80%;
     }
+
+    .classeContato{
+        max-width: 100%;
+    }
 }
 
 /* Redimencionameto para telas com largura entre 350px e 600px */
-@media (min-width: 350px) and (max-width: 600px) {
+@media (min-width: 351px) and (max-width: 599px) {
     .classeEMALTA{
         width: 66%;
     }
@@ -258,6 +372,10 @@ button i {
 
     .input-box {
         width: 80%;
+    }
+
+    .classeContato{
+        max-width: 32%;
     }
 }
 
@@ -278,10 +396,14 @@ button i {
     .card .preco h2 {
         font-size: 18px;
     }
+
+    .classeContato{
+        max-width: 24%;
+    }
 }
 
 /* Redimencionameto para telas com largura maior ou igual a 1200px */
-@media (min-width: 1200px) {
+@media (min-width: 1201px) {
     .classeEMALTA{
         width: 80%;
     }
@@ -296,5 +418,9 @@ button i {
 
     .card .preco h2 {
         font-size: 18px;
+    }
+
+    .classeContato{
+        max-width: 19%;
     }
 }
