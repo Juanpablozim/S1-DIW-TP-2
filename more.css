@@ -80,66 +80,109 @@
 }
 
 /*
-    CARDs
+    ----------------------------------------------------------
+    CORPO
+    ----------------------------------------------------------
 */
 
-.encontrados{
-    min-height: 75vh;
+.pagamento{
+    color: aliceblue;
+    background-color: rgb(58, 120, 255);
+    display: grid;
+    grid-template-columns: 60% 40%;
 }
 
-/* Regras gerais do card */
-.card {
-    margin-left: 0.5%;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding: 5px;
-    border: 2px solid rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+.nomeProduto{
+    font-size: 5vmin;
+    text-align: left;
+    padding: 10px;
+    width: 100%;
+}
+
+.precoProduto{
+    font-size: 7vmin;
+    text-align: right;
+    padding: 10px 5% 0px 0px;
+    width: 100%;
+}
+
+.dadosProdutos{
+    grid-template-columns: 50% 50%;
+    display: grid;
+}
+
+.divimgProduto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    padding: 5%;
+    width: 100%;
+}
+  
+.imgProduto {
+    max-height: 50vmin;
+}  
+
+.maisinfoProduto{
+    padding: 5%;
+    width: 100%;
     display: inline-block;
 }
 
-.card:hover {
-    border: 2px solid green;
+.categoriaProduto{
+    color: rgb(87, 87, 87);
 }
 
-.card .cardIMG {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.descricaoProduto{
+    margin: 10px 0px 0px 0px;
+    font-size: 3vmin;
 }
 
-.card img {
-    max-height: 130px;
-    max-width: 80%;
-    transition: 0.5s;
+.estrelasProduto{
+    color: gold;
+    font-size: 4vmin;
+    margin: 30px 0px 0px 0px;
 }
 
-.card:hover img {
-    max-height: 148px;
-    max-width: 100%;
+.avaliacaoProduto{
+    margin: 0px 10px 0px 0px;
+    display: inline-block;
 }
 
-.card .texto h1 {
-    color: rgb(65, 65, 65);
-    font-size: 12px;
+.numeroavaliacoesProduto{
+    display: inline-block;
 }
 
-.card .preco h2 {
-    max-height: 20px;
-    background-color: rgba(0, 0, 0, 0.04);
+.enviarspace{
+    margin: 20px 0px 0px 0px;
+}
+
+.enviar{
+    padding: 10px   ;
     border-radius: 10px;
-    color: black;
+    text-align: center;
+    background-color: rgb(181, 204, 255);
+    color: rgb(58, 120, 255);
 }
 
-.card:hover .preco h2 {
-    color: green;
+.BuyBTNdiv{
+    text-align: center;
 }
 
-.card .texto {
-    padding: 10px;
+.BuyBTN {
+    font-size: 5vmin;
+    margin: 10px;
+    border: 1px rgb(0, 110, 255) solid;
+    padding: 5px;
+    border-radius: 5px;
+    color: rgb(0, 110, 255);
+    background-color: aliceblue;
+}
+
+.BuyBTN:hover{
+    background-color: rgb(0, 110, 255);
+    color: white;
 }
 
 /*
@@ -189,67 +232,30 @@
     flex-basis: 33.33%;
 }
 
+/*
+    ----------------------------------------------------------
+    RESPONSIVIDADE
+    ----------------------------------------------------------
+*/
+
 /* Redimencionameto para telas menores que 350px */
-@media (max-width: 350px) {
-    .classeEMALTA{
-        width: 100%;
+@media (max-width: 350px) {   
+    .dadosProdutos{
+        display: inline;
     }
     
-    .card {
-        width: 100%;
-    }
-    
-    .card .texto {
-        height: 90px;
-    }
-
-    .card .preco h2 {
-        font-size: 18px;
-    }
-
-    .identificador {
-        margin: 5px;
-        max-width: 17%;
-        display: inline-block;
-    }
-
-    .input-box {
-        width: 80%;
-    }
-
-    .classeContato{
-        max-width: 100%;
-    }
-
-    .classeContato .cabecalho h1{
-        font-size: 4vmin;
-    }
-
-    .contatoInput{
-        font-size: 5vmin;
-    }
-
-    .contatoLabel{
-        font-size: 5vmin;
-    }
-    
-    .contatoInput:focus ~ .contatoLabel,
-    .contatoInput:valid ~ .contatoLabel{
-        font-size: 3vmin;
-    }
-
     .rodapeContatos {
         display: block;
         font-size: 3vmin;
         flex-basis: none;
-      }
-      
+    }
+
     .rodapeSocial {
         display: block;
         font-size: 4vmin;
         flex-basis: none;
     }
-      
+
     .metodosdepagamento {
         font-size: 10vmin;
         display: block;
@@ -284,68 +290,27 @@
         color: aliceblue;
         font-size: 5vmin;
     }
-    
-    .encontrados{
-        min-height: 55vh;
-    }
 }
 
 /* Redimencionameto para telas com largura entre 350px e 600px */
 @media (min-width: 351px) and (max-width: 599px) {
-    .classeEMALTA{
-        width: 100%;
-    }
-    
-    .card {
-        width: 48%;
-    }
-    
-    .card .texto {
-        height: 90px;
-    }
-
-    .card .preco h2 {
-        font-size: 16px;
-    }
-
-    .input-box {
-        width: 80%;
-    }
-
-    .classeContato{
-        max-width: 100%;
-    }
-
-    .classeContato .cabecalho h1{
-        font-size: 4vmin;
-    }
-
-    .contatoInput{
-        font-size: 5vmin;
-    }
-
-    .contatoLabel{
-        font-size: 5vmin;
-    }
-    
-    .contatoInput:focus ~ .contatoLabel,
-    .contatoInput:valid ~ .contatoLabel{
-        font-size: 3vmin;
+    .dadosProdutos{
+        display: inline;
     }
 
     .rodapeContatos {
         font-size: 2vmin;
         padding: 20px;
         flex-basis: 33.33%;
-      }
-      
+    }
+
     .rodapeSocial {
         font-size: 3vmin;
         text-align: center;
         padding: 20px;
         flex-basis: 33.33%;
     }
-      
+
     .metodosdepagamento {
         text-align: center;
         font-size: 10vmin;
@@ -376,26 +341,6 @@
 
 /* Redimencionameto para telas com largura entre 600px e 1200px */
 @media (min-width: 600px) and (max-width: 1200px) {
-    .classeEMALTA{
-        width: 75%;
-    }
-    
-    .card {
-        width: 23.6%;
-    }
-
-    .card .texto {
-        height: 50px;
-    }
-
-    .card .preco h2 {
-        font-size: 18px;
-    }
-
-    .classeContato{
-        max-width: 24%;
-    }
-
     .nav .row {
         padding: 5px 10px 5px 15px;
     }
@@ -403,26 +348,6 @@
 
 /* Redimencionameto para telas com largura maior ou igual a 1200px */
 @media (min-width: 1201px) {
-    .classeEMALTA{
-        width: 80%;
-    }
-    
-    .card {
-        width: 18.8%;
-    }
-
-    .card .texto {
-        height: 55px;
-    }
-
-    .card .preco h2 {
-        font-size: 18px;
-    }
-
-    .classeContato{
-        max-width: 19%;
-    }
-
     .nav .row {
         padding: 5px 20px 5px 20px;
     }

@@ -9,9 +9,7 @@
 }
 
 /*
-    ----------------------------------------------------------
     NAV MENU
-    ----------------------------------------------------------
 */
 .nav {
     background-color: rgb(58, 120, 255);
@@ -80,12 +78,85 @@
 }
 
 /*
-    CARDs
+    IDENTICICAÇÃO
 */
 
-.encontrados{
-    min-height: 75vh;
+.jpro{
+    text-align: center;
+    background-color: rgb(58, 120, 255);
+    color: aliceblue;
+    padding: 10px;
 }
+
+.madeby{
+    display: inline-block;
+}
+
+.identificacao{
+    display: inline-block;
+}
+
+/*
+    CATEGORIES
+*/
+
+.cabecalho{
+    border-radius: 10px 10px 0px 0px;
+    text-align: center;
+    background-color: rgb(58, 120, 255);
+    color: aliceblue;
+    padding: 10px;
+}
+
+.categories {
+    padding: 10px;
+    margin: 10px;
+}
+
+.categories .opcoes {
+    
+    border: rgb(58, 120, 255) 1px solid;
+    background-color: rgb(236, 235, 235);
+    padding: 15px;
+    max-width: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+
+.categories .combinacaoCategories {
+    margin: 10px;
+    display: inline-block;
+}
+
+.categories .combinacaoCategories input {
+    display: none;
+    color: blue;
+}
+
+.categories .combinacaoCategories label {
+    color: black;
+}
+
+.categories .combinacaoCategories input:checked + label {
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+.categories .produtos {
+    border: rgb(58, 120, 255) 1px solid;
+    max-width: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+.categories .produtos .texto {
+    white-space: normal;
+}
+
+/*
+    CARDs
+*/
 
 /* Regras gerais do card */
 .card {
@@ -143,9 +214,110 @@
 }
 
 /*
-    ----------------------------------------------------------
-    RODAPE
-    ----------------------------------------------------------
+    EM ALTA
+*/
+
+.classeEMALTA{
+    display: inline-block;
+}
+
+.textoEMALTA{
+    text-align: center;
+    margin-left: 0.5%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/*
+    CONTATO
+*/
+
+.classeContato {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.classeContato .cabecalho{
+    padding: 10px;
+    border: 2px rgb(0, 110, 255) solid;
+    background-color: rgb(0, 110, 255);
+    border-radius: 30px 30px 0px 0px;
+}
+
+.classeContato .cabecalho h1{
+    text-align: center;
+    font-size: 2.5vmin;
+    color: aliceblue;
+}
+
+.classeContato .corpo{
+    color: black;
+    border: 2px gray solid;
+    padding: 0px;
+}
+
+.classeContato .corpo .inputBoxclass{
+    position: relative;
+    margin: 23px 0px 10px 10px;
+}
+
+.contatoInput{
+    width: 80%;
+    font-size: 2.5vmin;
+    background: none;
+    border: none;
+    border-bottom: 2px solid rgb(0, 110, 255);;
+    outline: none;
+    color: rgb(0, 110, 255);
+}
+
+.contatoLabel{
+    font-size: 2vmin;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+    transition: .5s;
+    color: rgb(0, 0, 0);
+}
+
+.contatoInput:focus ~ .contatoLabel,
+.contatoInput:valid ~ .contatoLabel{
+    top: -20px;
+    font-size: 1.5vmin;
+    color: rgb(0, 110, 255);
+}
+
+.btnContatodiv{
+    text-align: center;
+}
+
+.btnContato {
+    margin: 10px;
+    border: 1px rgb(0, 110, 255) solid;
+    padding: 5px;
+    border-radius: 5px;
+    color: rgb(0, 110, 255);
+    background-color: aliceblue;
+}
+
+.btnContato:hover{
+    background-color: rgb(0, 110, 255);
+    color: white;
+}
+
+.enviado{
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px;
+    text-align: center;
+    font-size: 1.5vmin;
+    color: rgb(0, 110, 255);
+    background-color: rgb(192, 219, 255);
+}
+
+/*
+    RODAPÉ
 */
 
 .rodape {
@@ -171,16 +343,6 @@
     padding: 20px;
     flex-basis: 33.33%;
 }
-
-.rodapeSocial a {
-    color: aliceblue;
-    text-decoration: none;
-}
-
-.rodapeSocial a:visited {
-    color: palevioletred;
-    text-decoration: none;
-}
   
 .metodosdepagamento {
     text-align: center;
@@ -188,6 +350,7 @@
     padding: 20px;
     flex-basis: 33.33%;
 }
+
 
 /* Redimencionameto para telas menores que 350px */
 @media (max-width: 350px) {
@@ -284,9 +447,13 @@
         color: aliceblue;
         font-size: 5vmin;
     }
+
+    .madeby{
+        display: block;
+    }
     
-    .encontrados{
-        min-height: 55vh;
+    .identificacao{
+        display: block;
     }
 }
 
@@ -371,6 +538,14 @@
     .rodapeSocial {
         color: aliceblue;
         font-size: 5vmin;
+    }
+
+    .madeby{
+        display: block;
+    }
+    
+    .identificacao{
+        display: block;
     }
 }
 

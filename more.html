@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="pesquisa.css">
+    <link rel="stylesheet" href="more.css">
     <script src="https://kit.fontawesome.com/525c49cbb7.js" crossorigin="anonymous"></script>
 </head>
 <body onload="algoescrito()">
@@ -15,7 +14,8 @@
             <div class="row">
                 <a href="" target="_blank" hidden></a>
                 <input type="text" id="input-box" placeholder="Search anything" autocomplete="off">
-                <button id="btnclean"><i class="fa-solid fa-magnifying-glass" id="gosearch"></i><i class="fa-solid fa-x" id="cleansearch"></i></button>
+                <button id="btnclean"><i class="fa-solid fa-magnifying-glass" id="gosearch"></i><i class="fa-solid fa-x"
+                        id="cleansearch"></i></button>
             </div>
         </div>
         <div class="gohome">
@@ -23,8 +23,43 @@
         </div>
     </header>
 
-    <div class="encontrados" id="encontrados">
-        
+    <div id="corpo">
+        <div id="pagamento" class="pagamento">
+            <div class="nomeProduto" id="nomeProduto">
+
+            </div>
+            <div class="precoProduto" id="precoProduto">
+
+            </div>
+        </div>
+        <div class="dadosProdutos" id="dadosProdutos">
+            <div class="divimgProduto" id="imgProduto">
+                
+            </div>
+            <div class="maisinfoProduto" id="maisinfoProduto">
+                <div class="categoriaProduto" id="categoriaProduto">
+
+                </div>
+                <div class="descricaoProduto" id="descricaoProduto">
+
+                </div>
+                <div class="estrelasProduto" id="estrelasProduto">
+                    
+                </div>
+                <div class="avaliacaoProduto" id="avaliacaoProduto">
+
+                </div>
+                <div class="numeroavaliacoesProduto" id="numeroavaliacoesProduto">
+                    
+                </div>
+                <div id="enviar" class="enviarspace">
+
+                </div>
+                <div class="BuyBTNdiv">
+                    <button class="BuyBTN" id="BuyBTN">COMPRAR</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <footer class="rodape">
@@ -45,7 +80,9 @@
             <i class="fa-brands fa-paypal"></i>
             <i class="fa-brands fa-pix"></i>
         </div>
+    </footer>
 
-    <script src="pesquisa.js"></script>
+
+    <script src="more.js"></script>
 </body>
 </html>

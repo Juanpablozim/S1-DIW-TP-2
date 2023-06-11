@@ -1,179 +1,75 @@
-// realiza leitura de parâmetros
 let urlParams = new URLSearchParams(window.location.search);
-const idrecebido = parseInt(urlParams.get('id'));
+const strpesquisa = urlParams.get('pesquisa');
 
-// Define divs a serem escritas
-const emAlta = document.getElementById('emAlta');
-
-// declara variavel de leitura de dados
 let dadosLidos;
-let categoriasLidas;
-let ProdutosCategoriasLidas;
-let categoriaAtual;
+let produtosEncontrados = [];
 
-/** 
-    Funções para leitura e escrita de dados da Fake Store API
-*/
-
-/*
-    LEITURA DADOS GERAIS
-*/
-leDados().then(() => {
-    ProdutosEMALTA();
-}).catch(error => {
+leDados()
+  .then(() => {
+    encontraProdutos();
+  })
+  .catch(error => {
     console.error(error);
-});
+  });
 
 function leDados() {
-    return fetch('https://fakestoreapi.com/products')
-        .then(res => res.json())
-        .then(data => {
-            dadosLidos = data;
-        });
-}
-
-/*
-    ESCRITA DADOS GERAIS
-*/
-function ProdutosEMALTA() {
-    let texto = '<div class="textoEMALTA"><h1>EM ALTA!!!</h1></div>';
-    const limiteCaracteres = 40;
-
-    for (let i = 0; (i < dadosLidos.length) && (i < 30); i++) {
-        let titulo = dadosLidos[i].title;
-        if (titulo.length > limiteCaracteres) {
-            titulo = titulo.substring(0, limiteCaracteres) + '...';
-        }
-
-        texto += `  <div class="card">
-                        <div class="cardIMG">
-                            <img src="${dadosLidos[i].image}">
-                        </div>
-                        <div class="texto">
-                            <h1 class="cardTEXT">
-                                ${titulo}
-                            </h1>
-                        </div>
-                        <div class="preco">
-                            <h2>
-                                R$ ${dadosLidos[i].price}
-                            </h2>
-                        </div>
-                    </div>`;
-    }
-    emAlta.innerHTML = texto;
-}
-
-/*
-    LEITURA DADOS CATEGORIAS
-*/
-leCategorias()
-    .then(() => {
-        BuscaCategorias();
-        addCategoriaChangeListeners(); // Adiciona os ouvintes de mudança nas categorias
-        return leProdutosCategorias(); // Chama leProdutosCategorias após a leitura das categorias
-    })
-    .then(() => {
-        BuscaProdutosCategorias();
-    })
-    .catch(error => {
-        console.error(error);
+  return fetch('https://fakestoreapi.com/products')
+    .then(res => res.json())
+    .then(json => {
+      dadosLidos = json;
     });
-
-function leCategorias() {
-    return fetch('https://fakestoreapi.com/products/categories')
-        .then(res => res.json())
-        .then(data => {
-            categoriasLidas = data;
-        });
 }
 
-function BuscaCategorias() {
-    let tela = document.getElementById('opcoesCategories');
-    let strHTML = '';
+function encontraProdutos() {
+  const pesquisaLowerCase = strpesquisa.toLowerCase();
 
-    for (let i = 0; i < categoriasLidas.length; i++) {
-        if (i == 0) {
-            strHTML += `<div class="combinacaoCategories">
-            <input type="radio" id="${categoriasLidas[i]}" name="tipoCategoria" checked><label for="${categoriasLidas[i]}">${categoriasLidas[i]}</label>
-            </div>`;
-        } else {
-            strHTML += `<div class="combinacaoCategories">
-            <input type="radio" id="${categoriasLidas[i]}" name="tipoCategoria"><label for="${categoriasLidas[i]}">${categoriasLidas[i]}</label>
-    </div>`;
-        }
+  for (let i = 0; i < dadosLidos.length; i++) {
+    const produto = dadosLidos[i];
+    const { title, description } = produto;
+
+    if (
+      title.toLowerCase().includes(pesquisaLowerCase) ||
+      description.toLowerCase().includes(pesquisaLowerCase)
+    ) {
+      produtosEncontrados.push(produto);
+    }
+  }
+
+  MostrarProdutos();
+}
+
+function MostrarProdutos() {
+  let tela = document.getElementById('encontrados');
+  let strHTML = '<h1>Produtos encontrados:</h1>';
+  const limiteCaracteres = 40;
+
+  for (let i = 0; i < produtosEncontrados.length && i < 10; i++) {
+    let titulo = produtosEncontrados[i].title;
+    if (titulo.length > limiteCaracteres) {
+      titulo = titulo.substring(0, limiteCaracteres) + '...';
     }
 
-    tela.innerHTML = strHTML;
+    strHTML += `<a href="more.html?id=${produtosEncontrados[i].id}">
+                  <div class="card">
+                    <div class="cardIMG">
+                      <img src="${produtosEncontrados[i].image}">
+                    </div>
+                    <div class="texto">
+                      <h1 class="cardTEXT">
+                        ${titulo}
+                      </h1>
+                    </div>
+                    <div class="preco">
+                      <h2>
+                        R$ ${produtosEncontrados[i].price}
+                      </h2>
+                    </div>
+                  </div>
+                </a>`;
+  }
+
+  tela.innerHTML = strHTML;
 }
-
-function leProdutosCategorias() {
-    let strCategories = '';
-
-    // Verifica qual opção está marcada
-    for (let i = 0; i < categoriasLidas.length; i++) {
-        if (document.getElementById(categoriasLidas[i]).checked) {
-            strCategories = categoriasLidas[i];
-        }
-    }
-
-    return fetch(`https://fakestoreapi.com/products/category/${strCategories}`)
-        .then(res => res.json())
-        .then(data => {
-            ProdutosCategoriasLidas = data;
-        });
-}
-
-function BuscaProdutosCategorias() {
-    let tela = document.getElementById('produtosCategories');
-    let strHTML = '';
-    const limiteCaracteres = 40;
-
-    for (let i = 0; (i < ProdutosCategoriasLidas.length) && (i < 10); i++) {
-        let titulo = ProdutosCategoriasLidas[i].title;
-        if (titulo.length > limiteCaracteres) {
-            titulo = titulo.substring(0, limiteCaracteres) + '...';
-        }
-
-        strHTML += `  <div class="card">
-                        <div class="cardIMG">
-                            <img src="${ProdutosCategoriasLidas[i].image}">
-                        </div>
-                        <div class="texto">
-                            <h1 class="cardTEXT">
-                                ${titulo}
-                            </h1>
-                        </div>
-                        <div class="preco">
-                            <h2>
-                                R$ ${ProdutosCategoriasLidas[i].price}
-                            </h2>
-                        </div>
-                    </div>`;
-    }
-
-    tela.innerHTML = strHTML;
-}
-
-function addCategoriaChangeListeners() {
-    for (let i = 0; i < categoriasLidas.length; i++) {
-        let categoria = categoriasLidas[i];
-        let element = document.getElementById(categoria);
-        element.addEventListener('change', () => {
-            // Quando houver uma mudança na opção de categoria selecionada
-            leProdutosCategorias()
-                .then(() => {
-                    // Chama a função para carregar os produtos da categoria atualizada
-                    BuscaProdutosCategorias();
-                    // Exibe os produtos atualizados na tela
-                })
-                .catch(error => {
-                    console.error(error);
-                });
-        });
-    }
-}
-
 
 /** 
     Funções para barra de pesquisa da página
@@ -183,6 +79,7 @@ function addCategoriaChangeListeners() {
 const inputBox = document.getElementById("input-box"); // barra de pesquisa
 const goSearchButton = document.getElementById("gosearch"); // botao de pesquisa
 const cleanSearchButton = document.getElementById("cleansearch"); // botao de limpar a barra
+const goHomeButton = document.getElementById("gohome"); // botao de pesquisa
 
 // funcao para colocar o "x" na tela quando algo for escrito na barra de pesquisa
 inputBox.onkeyup = function () {
@@ -206,12 +103,14 @@ cleanSearchButton.onclick = function () {
     // Tira o "x" da tela
 }
 
-
-
-function enviarDados() {
-    document.getElementById('enviado').innerHTML = 'Parabéns!<br>Agora você estará por dentro de tudo de melhor que a The Best Store tem para te oferecer';
-    document.getElementById('contatoEmail').value = '';
-    document.getElementById('contatoNumero').value = '';
+// Funcao para limpar a caixa e retirar o "x" quando ele for pressionado
+goSearchButton.onclick = function () {
+    if (inputBox.value != "") {
+        window.location.assign(`pesquisa.html?pesquisa=${inputBox.value}`);
+    }
 }
 
-document.getElementById('btnFormContato').addEventListener('click', enviarDados);
+// Funcao para voltar para a página home
+goHomeButton.onclick = function () {
+  window.location.assign(`index.html`);
+}
