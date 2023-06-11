@@ -132,7 +132,7 @@ function BuscaProdutosCategorias() {
             titulo = titulo.substring(0, limiteCaracteres) + '...';
         }
 
-        strHTML += `  <a href="more.html?id=${dadosLidos[i].id}"><div class="card">
+        strHTML += `  <a href="more.html?id=${ProdutosCategoriasLidas[i].id}"><div class="card">
                         <div class="cardIMG">
                             <img src="${ProdutosCategoriasLidas[i].image}">
                         </div>

@@ -4,7 +4,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     box-sizing: border-box;
 }
 
@@ -85,28 +85,28 @@
     ----------------------------------------------------------
 */
 
-.pagamento{
+.pagamento {
     color: aliceblue;
     background-color: rgb(58, 120, 255);
     display: grid;
     grid-template-columns: 60% 40%;
 }
 
-.nomeProduto{
+.nomeProduto {
     font-size: 5vmin;
     text-align: left;
     padding: 10px;
     width: 100%;
 }
 
-.precoProduto{
+.precoProduto {
     font-size: 7vmin;
     text-align: right;
     padding: 10px 5% 0px 0px;
     width: 100%;
 }
 
-.dadosProdutos{
+.dadosProdutos {
     grid-template-columns: 50% 50%;
     display: grid;
 }
@@ -119,54 +119,55 @@
     padding: 5%;
     width: 100%;
 }
-  
+
 .imgProduto {
     max-height: 50vmin;
-}  
+    max-width: 100%;
+}
 
-.maisinfoProduto{
+.maisinfoProduto {
     padding: 5%;
     width: 100%;
     display: inline-block;
 }
 
-.categoriaProduto{
+.categoriaProduto {
     color: rgb(87, 87, 87);
 }
 
-.descricaoProduto{
+.descricaoProduto {
     margin: 10px 0px 0px 0px;
     font-size: 3vmin;
 }
 
-.estrelasProduto{
+.estrelasProduto {
     color: gold;
     font-size: 4vmin;
     margin: 30px 0px 0px 0px;
 }
 
-.avaliacaoProduto{
+.avaliacaoProduto {
     margin: 0px 10px 0px 0px;
     display: inline-block;
 }
 
-.numeroavaliacoesProduto{
+.numeroavaliacoesProduto {
     display: inline-block;
 }
 
-.enviarspace{
+.enviarspace {
     margin: 20px 0px 0px 0px;
 }
 
-.enviar{
-    padding: 10px   ;
+.enviar {
+    padding: 10px;
     border-radius: 10px;
     text-align: center;
     background-color: rgb(181, 204, 255);
     color: rgb(58, 120, 255);
 }
 
-.BuyBTNdiv{
+.BuyBTNdiv {
     text-align: center;
 }
 
@@ -180,7 +181,7 @@
     background-color: aliceblue;
 }
 
-.BuyBTN:hover{
+.BuyBTN:hover {
     background-color: rgb(0, 110, 255);
     color: white;
 }
@@ -196,18 +197,18 @@
     color: aliceblue;
     display: flex;
     justify-content: space-between;
-  }
+}
 
-.rodape a:visited{
+.rodape a:visited {
     color: red;
 }
-  
+
 .rodapeContatos {
     font-size: 2vmin;
     padding: 20px;
     flex-basis: 33.33%;
-  }
-  
+}
+
 .rodapeSocial {
     font-size: 3vmin;
     text-align: center;
@@ -224,7 +225,7 @@
     color: palevioletred;
     text-decoration: none;
 }
-  
+
 .metodosdepagamento {
     text-align: center;
     font-size: 10vmin;
@@ -239,11 +240,11 @@
 */
 
 /* Redimencionameto para telas menores que 350px */
-@media (max-width: 350px) {   
-    .dadosProdutos{
+@media (max-width: 350px) {
+    .dadosProdutos {
         display: inline;
     }
-    
+
     .rodapeContatos {
         display: block;
         font-size: 3vmin;
@@ -279,7 +280,7 @@
         background-color: rgb(0, 110, 255);
         color: aliceblue;
         display: inline-block;
-      }
+    }
 
     .rodapeContatos {
         text-align: center;
@@ -290,11 +291,24 @@
         color: aliceblue;
         font-size: 5vmin;
     }
+
+    .maisinfoProduto {
+        display: block;
+    }
+
+    .descricaoProduto {
+        font-size: 5vmin;
+    }
+
+    .estrelasProduto {
+        font-size: 7vmin;
+        text-align: center;
+    }
 }
 
 /* Redimencionameto para telas com largura entre 350px e 600px */
 @media (min-width: 351px) and (max-width: 599px) {
-    .dadosProdutos{
+    .dadosProdutos {
         display: inline;
     }
 
@@ -326,7 +340,7 @@
         background-color: rgb(0, 110, 255);
         color: aliceblue;
         display: inline-block;
-      }
+    }
 
     .rodapeContatos {
         text-align: center;
@@ -336,6 +350,19 @@
     .rodapeSocial {
         color: aliceblue;
         font-size: 5vmin;
+    }
+
+    .maisinfoProduto {
+        display: block;
+    }
+
+    .descricaoProduto {
+        font-size: 5vmin;
+    }
+
+    .estrelasProduto {
+        font-size: 7vmin;
+        text-align: center;
     }
 }
 
