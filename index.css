@@ -351,6 +351,16 @@
     flex-basis: 33.33%;
 }
 
+.rodapeSocial a {
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.rodapeSocial a:visited {
+    color: palevioletred;
+    text-decoration: none;
+}
+
 
 /* Redimencionameto para telas menores que 350px */
 @media (max-width: 350px) {
